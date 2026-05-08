@@ -156,12 +156,8 @@ onUnmounted(() => {
 <template>
   <div>
     <!-- 回车直接搜索 -->
-    <el-input
-        v-model="city"
-        placeholder="请输入城市"
-        @keyup.enter="address = city"
-        style="width: 300px; margin-bottom: 10px"
-    />
+    <el-input type="search" v-model="city" placeholder="请输入城市" @keyup.enter="address = city"
+              style="width: 300px; margin-bottom: 10px"/>
 
     <GainAddress :address="address" @get-lng-lat="handleAddress"></GainAddress>
     <div class="map-box" id="cesiumContainer"></div>
